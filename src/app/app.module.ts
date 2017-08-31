@@ -9,6 +9,8 @@ import { RecipesPage } from '../pages/recipes/recipes';
 import { RecipePage } from '../pages/recipe/recipe';
 import { ShoppingListPage } from '../pages/shopping-list/shopping-list';
 import { TabsPage } from '../pages/tabs/tabs';
+import { NewRecipePage } from '../pages/new-recipe/new-recipe';
+
 
 @NgModule({
   declarations: [
@@ -16,7 +18,8 @@ import { TabsPage } from '../pages/tabs/tabs';
     RecipesPage,
     RecipePage,
     ShoppingListPage,
-    TabsPage
+    TabsPage,
+    NewRecipePage
   ],
   imports: [
     BrowserModule,
@@ -28,7 +31,8 @@ import { TabsPage } from '../pages/tabs/tabs';
     RecipesPage,
     RecipePage,
     ShoppingListPage,
-    TabsPage
+    TabsPage,
+    NewRecipePage
   ],
   providers: [
     StatusBar,

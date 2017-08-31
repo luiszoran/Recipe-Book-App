@@ -8,7 +8,7 @@ import { ShoppingListPage } from '../shopping-list/shopping-list';
 @Component({
   selector: 'page-tabs',
   template: `<ion-tabs>
-              <ion-tab [root]="shoppingListPage" tabTitle="Shopping List" tabIcon="star"></ion-tab>
+              <ion-tab [root]="shoppingListPage" tabTitle="Shopping List" tabIcon="list-box"></ion-tab>
               <ion-tab [root]="recipesPage" tabTitle="Recipes" tabIcon="book"></ion-tab>
              </ion-tabs>`
   })
