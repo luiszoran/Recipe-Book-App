@@ -10,7 +10,6 @@ import { Ingredient } from "../../models/ingredient";
   templateUrl: 'shopping-list.html',
 })
 export class ShoppingListPage {
-
   ingredients: Ingredient[];
   constructor(public navCtrl: NavController, public navParams: NavParams, private shoppingListService: ShoppingListService) {
 
@@ -21,12 +20,17 @@ export class ShoppingListPage {
   }
 
     onAddItem(form: NgForm) {
-        this.shoppingListService.addItem(form.value.ingredientName, form.value.amount);
+        this.shoppingListService.addItem(form.value.name, form.value.amount);
         form.reset();
         this.loadItems();
     }
 
     loadItems() {
         this.ingredients = this.shoppingListService.getItems();
+    }
+
+    onCheckItem(index: number) {
+        this.shoppingListService.removeItem(index);
+        this.loadItems();
     }
 }
