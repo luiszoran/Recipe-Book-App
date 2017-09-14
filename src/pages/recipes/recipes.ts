@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { NewRecipePage } from '../new-recipe/new-recipe';
+import { EditRecipePage } from '../edit-recipe/edit-recipe';
 @IonicPage()
 @Component({
   selector: 'page-recipes',
@@ -12,6 +12,6 @@ export class RecipesPage {
   }
 
   onNewRecipe() {
-      this.navCtrl.push(NewRecipePage);
+      this.navCtrl.push(EditRecipePage, {mode: 'New'});
   }
 }

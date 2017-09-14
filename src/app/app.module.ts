@@ -9,7 +9,7 @@ import { RecipesPage } from '../pages/recipes/recipes';
 import { RecipePage } from '../pages/recipe/recipe';
 import { ShoppingListPage } from '../pages/shopping-list/shopping-list';
 import { TabsPage } from '../pages/tabs/tabs';
-import { NewRecipePage } from '../pages/new-recipe/new-recipe';
+import { EditRecipePage } from '../pages/edit-recipe/edit-recipe';
 import { ShoppingListService } from '../services/shopping-list';
 
 
@@ -20,11 +20,12 @@ import { ShoppingListService } from '../services/shopping-list';
     RecipePage,
     ShoppingListPage,
     TabsPage,
-    NewRecipePage
+    EditRecipePage
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    ReactiveFormsModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -33,7 +34,7 @@ import { ShoppingListService } from '../services/shopping-list';
     RecipePage,
     ShoppingListPage,
     TabsPage,
-    NewRecipePage
+    EditRecipePage
   ],
   providers: [
     StatusBar,
