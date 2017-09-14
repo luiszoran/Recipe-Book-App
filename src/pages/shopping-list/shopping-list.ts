@@ -6,18 +6,19 @@ import { Ingredient } from "../../models/ingredient";
 
 @IonicPage()
 @Component({
-  selector: 'page-shopping-list',
-  templateUrl: 'shopping-list.html',
+    selector: 'page-shopping-list',
+    templateUrl: 'shopping-list.html',
 })
 export class ShoppingListPage {
-  ingredients: Ingredient[];
-  constructor(public navCtrl: NavController, public navParams: NavParams, private shoppingListService: ShoppingListService) {
+    selectedIngredient: Ingredient = new Ingredient("", undefined);
+    ingredients: Ingredient[];
+    constructor(public navCtrl: NavController, public navParams: NavParams, private shoppingListService: ShoppingListService) {
 
-  }
+    }
 
-  ionViewWillEnter() {
-      this.loadItems();
-  }
+    ionViewWillEnter() {
+        this.loadItems();
+    }
 
     onAddItem(form: NgForm) {
         this.shoppingListService.addItem(form.value.name, form.value.amount);
@@ -30,6 +31,12 @@ export class ShoppingListPage {
     }
 
     onCheckItem(index: number) {
+        this.selectedIngredient = this.ingredients[index];
+        this.shoppingListService.removeItem(index);
+        this.loadItems();
+    }
+
+    onRemoveItem(index: number) {
         this.shoppingListService.removeItem(index);
         this.loadItems();
     }

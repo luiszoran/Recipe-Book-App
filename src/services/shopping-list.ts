@@ -20,4 +20,7 @@ export class ShoppingListService {
         return this.ingredients.slice();
     }
 
+    changeItem(name: string, amount: number, index: number) {
+        this.ingredients[index] = new Ingredient(name, amount);
+    }
 }
