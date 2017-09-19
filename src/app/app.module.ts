@@ -11,7 +11,7 @@ import { ShoppingListPage } from '../pages/shopping-list/shopping-list';
 import { TabsPage } from '../pages/tabs/tabs';
 import { EditRecipePage } from '../pages/edit-recipe/edit-recipe';
 import { ShoppingListService } from '../services/shopping-list';
-
+import { RecipeService } from '../services/recipe';
 
 @NgModule({
   declarations: [
@@ -24,8 +24,7 @@ import { ShoppingListService } from '../services/shopping-list';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp),
-    ReactiveFormsModule
+    IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -40,7 +39,8 @@ import { ShoppingListService } from '../services/shopping-list';
     StatusBar,
     SplashScreen,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
-    ShoppingListService
+    ShoppingListService,
+    RecipeService
   ]
 })
 export class AppModule {}
