@@ -1,4 +1,4 @@
-﻿import firebase from 'firebase';
+import firebase from 'firebase';
 
 export class AuthService {
     signup(email: string, password: string) {
@@ -11,5 +11,9 @@ export class AuthService {
 
     logout() {
       firebase.auth().signOut();
+    }
+
+    getActiveUser() {
+        return firebase.auth().currentUser;
     }
 }

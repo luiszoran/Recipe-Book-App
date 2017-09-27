@@ -3,6 +3,7 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
+import { HttpModule } from '@angular/http';
 
 import { MyApp } from './app.component';
 import { RecipesPage } from '../pages/recipes/recipes';
@@ -15,21 +16,17 @@ import { RecipeService } from '../services/recipe';
 import { SigninPage } from "../pages/signin/signin";
 import { SignupPage } from "../pages/signup/signup";
 import { AuthService } from "../services/auth";
+import { DatabaseOptionsPage } from "../pages/database-options/database-options";
 
 @NgModule({
   declarations: [
     MyApp,
-    RecipesPage,
-    RecipePage,
-    ShoppingListPage,
-    TabsPage,
-    EditRecipePage,
-    SigninPage,
-    SignupPage
+    DatabaseOptionsPage
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    HttpModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -40,7 +37,8 @@ import { AuthService } from "../services/auth";
     TabsPage,
     EditRecipePage,
     SigninPage,
-    SignupPage
+    SignupPage,
+    DatabaseOptionsPage
   ],
   providers: [
     StatusBar,
