@@ -1,13 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { IonicPage, NavController, NavParams, PopoverController, LoadingController, AlertController } from 'ionic-angular';
-import { EditRecipePage } from '../edit-recipe/edit-recipe';
+import { Component } from '@angular/core';
+import { NavController, NavParams, PopoverController, LoadingController, AlertController } from 'ionic-angular';
 import { RecipeService } from "../../services/recipe";
 import { Recipe } from "../../models/recipe";
-import { RecipePage } from "../recipe/recipe";
 import { AuthService } from "../../services/auth";
 import { DatabaseOptionsPage } from "../database-options/database-options";
 
-@IonicPage()
 @Component({
   selector: 'page-recipes',
   templateUrl: 'recipes.html',
@@ -20,7 +17,7 @@ export class RecipesPage {
   }
 
   onNewRecipe() {
-      this.navCtrl.push(EditRecipePage, {mode: 'New'});
+      this.navCtrl.push("EditRecipePage", {mode: 'New'});
   } 
 
   ionViewWillEnter() {
@@ -28,7 +25,7 @@ export class RecipesPage {
   }
 
   onLoadRecipe(recipe: Recipe, index: number) {
-      this.navCtrl.push(RecipePage, { recipe: recipe, index: index });
+      this.navCtrl.push("RecipePage", { recipe: recipe, index: index });
   }
 
   onShowOptions(event: MouseEvent) {

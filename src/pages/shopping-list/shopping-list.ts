@@ -1,12 +1,11 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, PopoverController, LoadingController, AlertController } from 'ionic-angular';
+import { NavController, NavParams, PopoverController, LoadingController, AlertController } from 'ionic-angular';
 import { NgForm } from '@angular/forms';
 import { ShoppingListService } from '../../services/shopping-list';
 import { Ingredient } from "../../models/ingredient";
 import { DatabaseOptionsPage } from "../database-options/database-options";
 import { AuthService } from "../../services/auth";
 
-@IonicPage()
 @Component({
     selector: 'page-shopping-list',
     templateUrl: 'shopping-list.html',

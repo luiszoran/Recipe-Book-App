@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { EditRecipePage } from "../edit-recipe/edit-recipe"
 import { Recipe } from "../../models/recipe"
 import { ShoppingListService } from "../../services/shopping-list"
 import { RecipeService } from "../../services/recipe"
@@ -23,7 +22,7 @@ export class RecipePage implements OnInit{
   }
 
   onEditRecipe() {
-      this.navCtrl.push(EditRecipePage, { mode: "Edit", recipe: this.recipe, index: this.index });
+      this.navCtrl.push("EditRecipePage", { mode: "Edit", recipe: this.recipe, index: this.index });
   }
 
   onAddIngredients() {

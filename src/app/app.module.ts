@@ -7,21 +7,18 @@ import { HttpModule } from '@angular/http';
 
 import { MyApp } from './app.component';
 import { RecipesPage } from '../pages/recipes/recipes';
-import { RecipePage } from '../pages/recipe/recipe';
 import { ShoppingListPage } from '../pages/shopping-list/shopping-list';
-import { TabsPage } from '../pages/tabs/tabs';
-import { EditRecipePage } from '../pages/edit-recipe/edit-recipe';
 import { ShoppingListService } from '../services/shopping-list';
 import { RecipeService } from '../services/recipe';
-import { SigninPage } from "../pages/signin/signin";
-import { SignupPage } from "../pages/signup/signup";
 import { AuthService } from "../services/auth";
 import { DatabaseOptionsPage } from "../pages/database-options/database-options";
 
 @NgModule({
   declarations: [
     MyApp,
-    DatabaseOptionsPage
+    DatabaseOptionsPage,
+    RecipesPage,
+    ShoppingListPage
   ],
   imports: [
     BrowserModule,
@@ -32,12 +29,7 @@ import { DatabaseOptionsPage } from "../pages/database-options/database-options"
   entryComponents: [
     MyApp,
     RecipesPage,
-    RecipePage,
     ShoppingListPage,
-    TabsPage,
-    EditRecipePage,
-    SigninPage,
-    SignupPage,
     DatabaseOptionsPage
   ],
   providers: [
